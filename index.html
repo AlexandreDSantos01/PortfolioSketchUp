@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfólio de Arquitetura</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <link rel="shortcut icon" href="Logo.ico" type="image/x-icon">
+  <style>html { scroll-behavior: smooth; }</style>
+</head>
+<body>
+  <!-- Partículas de fundo -->
+  <div id="particles-js"></div>
+
+  <!-- Navegação -->
+  <nav class="navbar">
+    <div class="logo">Portfólio</div>
+    <div class="hamburguer" id="hamburguer">
+      <i class="fas fa-bars"></i>
+    </div>
+    <ul id="nav-list">
+  <li><a href="#sobre"><i class="fas fa-user"></i> Sobre</a></li>
+  <li><a href="#projeto"><i class="fas fa-briefcase"></i> Projeto</a></li>
+  <li><a href="#projeto2"><i class="fas fa-layer-group"></i> Projeto 02</a></li>
+  <li><a href="#contato"><i class="fas fa-envelope"></i> Contato</a></li>
+  <li>
+    <a href="https://alexandredsantos01.github.io/MeuPortfolio/" class="destaque">
+      <i class="fas fa-laptop-code"></i> Portfólio Programação
+    </a>
+  </li>
+</ul>
+  </nav>
+
+  <!-- Apresentação -->
+  <section class="hero" id="sobre">
+    <div class="container">
+      <img src="MMeioA_03.png" alt="Logo" class="logo-apresentacao" />
+      <h1>Olá, sou Alexandre</h1>
+      <p>Sou um Projetista 3D pronto para transformar ideias em espaços reais...</p>
+    </div>
+  </section>
+
+  <!-- Projeto 1 -->
+  <section class="projeto" id="projeto">
+    <div class="container">
+      <h2>Projeto: Casa01</h2>
+      <p>Este projeto foi desenvolvido para representar um conceito de habitação moderna...</p>
+
+      <div class="carrossel">
+        <img src="FrenteCasa.jpg" class="ativo" alt="Render 1" />
+        <img src="Quarto01A.jpg" alt="Render 2" />
+        <img src="SalaC.jpg" alt="Render 3" />
+        <img src="CozinhaA.jpg" alt="Render 4" />
+        <img src="Banheiro01.jpg" alt="Render 5" />
+        <img src="Plantas Casa01_03_Planta Baixa.jpg" alt="Render 6" />
+        <img src="Plantas Casa01_12_Quarto 01 A.jpg" alt="Render 7" />
+        <img src="Plantas Casa01_05_Cozinha A.jpg" alt="Render 8" />
+        <button id="anterior1">❮</button>
+        <button id="proximo1">❯</button>
+      </div>
+
+      <div class="botoes-download">
+        <a href="https://drive.google.com/file/d/1LHMqlfjklZAJGtE_aEusP_oiQFOt3GBO/view?usp=sharing" target="_blank" class="btn">Baixar Pranchas PDF</a>
+        <a href="https://drive.google.com/file/d/1tLiqcYh-SvBLzRh-stoXk4fZ4dDR9Etf/view?usp=sharing" target="_blank" class="btn">Baixar Renders PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projeto 2 -->
+  <section class="projeto2" id="projeto2">
+    <div class="container02">
+      <h2>Projeto: Casa02</h2>
+      <p>Este projeto também explora conceitos modernos com foco em iluminação natural...</p>
+
+      <div class="carrossel02">
+        <img src="QuartoFinal_1 - Photo (copy).jpg" class="ativo" alt="Render 1" />
+        <img src="SalaFinal.jpg" alt="Render 2" />
+        <img src="SalaFinal02.jpg" alt="Render 3" />
+        <button id="anterior2">❮</button>
+        <button id="proximo2">❯</button>
+      </div>
+
+      
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section class="contato" id="contato">
+    <div class="container">
+      <h2>Entre em Contato</h2>
+      <form action="mailto:Alexandreds3@hotmail.com" method="POST" enctype="text/plain">
+        <input type="text" name="nome" placeholder="Seu nome" required />
+        <input type="email" name="email" placeholder="Seu email" required />
+        <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <a href="https://www.instagram.com/xande_al10/" target="_blank"><i class="fab fa-instagram"></i></a>
+   <a href="mailto:Alexandreds3@hotmail.com"><i class="fas fa-envelope"></i></a>
+<a href="https://github.com/AlexandreDSantos01/AlexandreDSantos01" target="_blank"><i class="fab fa-github"></i></a>
+<a href="https://drive.google.com/file/d/1nJAoGIRT3JIRsp__WdqHHMXsSDlUCWeW/view?usp=sharing" target="_blank"><i class="fas fa-file-alt"></i></a>
+<a href="https://alexandredsantos01.github.io/MeuPortfolio/" target="_blank" title="Portfólio de Programação"><i class="fas fa-laptop-code"></i></a>
+
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="particles-config.js"></script>
+  <script>
+    // Scroll animation
+    const elements = document.querySelectorAll(".container, .carrossel img, .btn, footer a");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+      });
+    }, { threshold: 0.1 });
+    elements.forEach(el => {
+      el.classList.add("hidden");
+      observer.observe(el);
+    });
+
+    // Menu hambúrguer
+    const hamburguer = document.getElementById("hamburguer");
+    const navList = document.getElementById("nav-list");
+    hamburguer.addEventListener("click", () => {
+      navList.classList.toggle("ativo");
+    });
+
+    // Carrossel 1
+    const imgs1 = document.querySelectorAll(".carrossel img");
+    let index1 = 0;
+    document.getElementById("proximo1").onclick = () => {
+      imgs1[index1].classList.remove("ativo");
+      index1 = (index1 + 1) % imgs1.length;
+      imgs1[index1].classList.add("ativo");
+    };
+    document.getElementById("anterior1").onclick = () => {
+      imgs1[index1].classList.remove("ativo");
+      index1 = (index1 - 1 + imgs1.length) % imgs1.length;
+      imgs1[index1].classList.add("ativo");
+    };
+
+    // Carrossel 2
+    const imgs2 = document.querySelectorAll(".carrossel02 img");
+    let index2 = 0;
+    document.getElementById("proximo2").onclick = () => {
+      imgs2[index2].classList.remove("ativo");
+      index2 = (index2 + 1) % imgs2.length;
+      imgs2[index2].classList.add("ativo");
+    };
+    document.getElementById("anterior2").onclick = () => {
+      imgs2[index2].classList.remove("ativo");
+      index2 = (index2 - 1 + imgs2.length) % imgs2.length;
+      imgs2[index2].classList.add("ativo");
+    };
+  </script>
+</body>
+</html>

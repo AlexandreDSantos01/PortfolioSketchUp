@@ -1,0 +1,250 @@
+/* Reset e base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0a0a0a;
+  color: #fff;
+}
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+}
+.container02 {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+/* Navbar com hambúrguer */
+.navbar {
+  background: #0a0a0a;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+.navbar .logo {
+  color: #fff;
+  font-weight: bold;
+}
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+.navbar ul.ativo {
+  display: block;
+  position: absolute;
+  top: 70px;
+  background: #121212;
+  width: 100%;
+  text-align: center;
+}
+.navbar ul li {
+  margin: 10px 0;
+}
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar ul li a.destaque {
+  color: #00aaff; 
+  font-weight: bold;
+  border: 1px solid #00aaff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  background-color: rgba(255, 215, 0, 0.1); /* fundo leve */
+  transition: all 0.3s ease;
+}
+
+.navbar ul li a.destaque:hover {
+  background-color: #00aaff;
+  color: #000;
+}
+.hamburguer {
+  display: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #fff;
+}
+
+/* Hero */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 80px;
+}
+.hero .logo-apresentacao {
+  width: 150px;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+.hero p {
+  max-width: 700px;
+  margin: auto;
+  font-size: 18px;
+}
+
+/* Projeto */
+.projeto h2,
+.projeto2 h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+.imagem-render {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.botoes-download {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Carrossel padrão */
+.carrossel,
+.carrossel02 {
+  position: relative;
+  margin: 20px 0;
+}
+.carrossel img,
+.carrossel02 img {
+  width: 80%;
+  aspect-ratio: 16 / 9;
+   object-fit: contain;
+  border-radius: 10px;
+  display: none;
+  margin: auto;
+}
+.carrossel img.ativo,
+.carrossel02 img.ativo {
+  display: block;
+}
+.carrossel button,
+.carrossel02 button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #673dff;
+  border: none;
+  color: #0a0a0a;
+  padding: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+#anterior1 {
+  left: 10px;
+}
+#proximo1 {
+  right: 10px;
+}
+#anterior2 {
+  left: 10px;
+}
+#proximo2 {
+  right: 10px;
+}
+
+/* Contato */
+.contato h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+form input,
+form textarea {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: white;
+}
+form .btn {
+  background: #d4af37;
+  color: #0a0a0a;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Footer */
+.footer {
+  background: #0a0a0a;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.footer i {
+  font-size: 28px;
+  color: white;
+  transition: 0.3s;
+}
+.footer i:hover {
+  color: #d4af37;
+  transform: scale(1.2);
+}
+
+/* Animação scroll */
+.hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s ease;
+}
+.show {
+  opacity: 1;
+  transform: none;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hamburguer {
+    display: block;
+  }
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+  }
+  .navbar ul li {
+    margin: 15px 0;
+  }
+  .hero h1 {
+    font-size: 36px;
+  }
+  .projeto h2,
+  .projeto2 h2 {
+    font-size: 28px;
+  }
+  .contato h2 {
+    font-size: 26px;
+  }
+}
+
+/* Fundo com partículas */
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: #1d1d1d;
+}
